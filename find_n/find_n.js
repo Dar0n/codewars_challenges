@@ -20,6 +20,8 @@ function find_n(m) {
   return volume === m ? counter : -1;
 }
 
+module.exports.find_n = find_n;
+
 console.log(find_n(4183059834009), 2022);
 console.log(find_n(24723578342962), -1);
 console.log(find_n(135440716410000), 4824);

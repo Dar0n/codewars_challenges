@@ -4,11 +4,14 @@
   "description": "",
   "main": "find_n.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-modules test.mjs | tap-spec"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "tap-spec": "^5.0.0",
     "tape": "^4.9.1"
   }
 }
