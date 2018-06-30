@@ -3,6 +3,10 @@
 function PaginationHelper(collection, items_per_page) {
   this.collection = collection;
   this.items_per_page = items_per_page;
+  this.item_count = item_count;
+  this.page_count = page_count;
+  this.page_item_count = page_item_count;
+  this.page_index = page_index;
 
   function item_count() {
     return this.collection.length;
