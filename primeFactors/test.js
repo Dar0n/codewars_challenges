@@ -1,9 +1,9 @@
-const { PaginationHelper } = require('./PaginationHelper');
+const { primeNumbers } = require('./primeNumbers');
 const test = require('tape');
 
-test('Describe PaginationHelper class', function (t) {
-  let arr = new Array(25);
-  let helper = new PaginationHelper(arr, 10);
-  t.equal(helper.page_count(), 3, 'page_count is returning incorrect value.');
+test('Get prime factors of the numbers', function (t) {
+  t.equal(primeNumbers(25), '(5**2)', '(5**2)');
+  t.equal(primeNumbers(100), '(2**2)(5**2)', '(2**2)(5**2)');
+  t.equal(primeNumbers(7775460), '(2**2)(3**3)(5)(7)(11**2)(17)', '(2**2)(3**3)(5)(7)(11**2)(17)');
   t.end();
 });
