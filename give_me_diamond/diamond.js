@@ -9,7 +9,6 @@ const diamond = (n) => {
     result = ' '.repeat(spaces) + '*'.repeat(n) + '\n' + result +  ' '.repeat(spaces) + '*'.repeat(n) + '\n';
     spaces ++;
   }
-  console.log(result);
   return result;
 }
 
