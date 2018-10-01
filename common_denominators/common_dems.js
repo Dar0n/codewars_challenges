@@ -1,6 +1,6 @@
 const common_dems = (arr) => {
   const myLCM =  arr.reduce((result, el) => lcm(result, el[1]), 1);
-  return arr.map(el => "(" + myLCM / el[1] + "," +  myLCM + ")").join('');
+  return arr.map(el => "(" + myLCM / el[1] * el[0] + "," +  myLCM + ")").join('');
 }
 
 const gcd = (a, b) => {
