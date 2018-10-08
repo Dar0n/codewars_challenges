@@ -1,7 +1,8 @@
 function nouveau(Constructor, ...args){
   let instance = {};
-  Constructor.apply(instance, args);
+  let result = Constructor.apply(instance, args);
   Object.setPrototypeOf(instance, Constructor.prototype);
+  if ((typeof result === 'object' || typeof result === 'function') && result !== null) return result;
   return instance;
 }
 
