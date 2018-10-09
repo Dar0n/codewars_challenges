@@ -2,17 +2,18 @@ function phones(str, num) {
   let lines = str.split('\n');
   if (lines[lines.length-1] === '') lines.pop();
   let phonebook = [];
-  lines.forEach((line, i) => {
-    let numberRegex = /\+\d{1,2}-\d{3}-\d{3}-\d{4}/;
-    let nameRegex = /<(\w+)>/;
-    let trailingSpaces = /^\s+|\s+$/;
+  lines.forEach((line) => {
+    let numberRegex = /\+(\d{1,2}-\d{3}-\d{3}-\d{4})/g;
+    let nameRegex = /<.+>/g;
+    let trailingSpaces = /^\s+|\s+$/g;
+    let specials = /\,|\;|\*|\/|\$|\?|\:|\!/g;
     let number = line.match(numberRegex);
     let name = line.match(nameRegex);
-    let address = line.replace(numberRegex, '').replace(nameRegex, '').replace(trailingSpaces, '');
+    let address = line.replace(numberRegex, '').replace(nameRegex, '').replace(specials, '').replace(/\s+/g, ' ').replace(/_/, ' ').replace(trailingSpaces, '');
     if (name && number && address) {
       phonebook.push({
         name: name[0].substr(1, name[0].length-2),
-        number: number[0],
+        number: number[0].substr(1),
         address: address,
       })
     }
